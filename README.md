@@ -1,4 +1,7 @@
 # NetflixPortfolio
+<img width="1224" height="667" alt="image" src="https://github.com/user-attachments/assets/062b011d-35d0-47a5-8023-ccff115bb02b" />
+<img width="992" height="447" alt="image" src="https://github.com/user-attachments/assets/05062008-7771-44df-bd22-2b4112cc72cf" />
+
 
 A sleek, responsive portfolio website modeled after Netflix’s iconic design. Built to highlight projects and skills with dynamic scrolling, bold visuals, and intuitive navigation.
 
