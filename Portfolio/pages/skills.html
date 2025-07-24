@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skills - YuvaanshFlix</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      background-color: #141414;
+      color: #ffffff;
+      font-family: 'Roboto', sans-serif;
+      user-select: none;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: #141414;
+      border-bottom: 1px solid #222;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 10;
+    }
+    .logo {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #e50914;
+      letter-spacing: 0.3em;
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+    }
+    nav {
+      display: flex;
+      gap: 30px;
+      font-weight: 700;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.1rem;
+    }
+    nav a {
+      color: #b3b3b3;
+      text-decoration: none;
+      padding-bottom: 4px;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.3s ease, color 0.3s ease;
+      user-select: none;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #fff;
+      border-bottom-color: #e50914;
+    }
+    main {
+      max-width: 1100px;
+      margin: 40px auto 80px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+      opacity: 0;
+      animation: fadeIn 1.2s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    h2.section-title {
+      font-family: 'Bebas Neue', cursive;
+      font-weight: 900;
+      font-size: 3rem;
+      color: #e50914;
+      user-select: none;
+      margin-bottom: 16px;
+      letter-spacing: 0.08em;
+      text-shadow: 0 0 8px #e50914aa;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 30px;
+    }
+    .skill-card {
+      background: linear-gradient(145deg, #1b1b1b, #252525);
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow:
+        0 0 10px #e5091488,
+        inset 0 0 8px #330000aa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+      color: #ddd;
+      user-select: none;
+    }
+    .skill-card:hover {
+      transform: scale(1.08);
+      box-shadow:
+        0 0 30px #e50914ff,
+        inset 0 0 12px #550000dd;
+    }
+    .skill-logo {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 24px;
+      object-fit: contain;
+      background: #111;
+      border-radius: 12px;
+      padding: 12px;
+      filter: drop-shadow(0 0 8px #e50914);
+      transition: filter 0.3s ease;
+    }
+    .skill-card:hover .skill-logo {
+      filter: drop-shadow(0 0 14px #ff0000);
+    }
+    .skill-name {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 800;
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 8px;
+      text-align: center;
+      text-shadow: 0 0 6px #e50914cc;
+    }
+    .skill-level {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: #ff3c3c;
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+    .skill-desc {
+      font-weight: 400;
+      font-size: 1rem;
+      text-align: center;
+      line-height: 1.4;
+      color: #ccc;
+      font-style: italic;
+      user-select: text;
+    }
+    @media (max-width: 768px) {
+      main {
+        margin: 20px auto 60px auto;
+      }
+      .skill-logo {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 18px;
+      }
+      .skill-name {
+        font-size: 1.3rem;
+      }
+      .skill-level {
+        font-size: 1rem;
+      }
+      .skill-desc {
+        font-size: 0.95rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 20px;
+      }
+      .skill-logo {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 14px;
+      }
+      .skill-name {
+        font-size: 1.1rem;
+      }
+      .skill-level {
+        font-size: 0.95rem;
+      }
+      .skill-desc {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo" onclick="location.href='profiles.html'">YUVAANSHFLIX</div>
+    <nav>
+      <a href="profiles.html">Profiles</a>
+      <a href="about.html">About</a>
+      <a href="skills.html" class="active">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+
+
+  <main>
+    <h2 class="section-title">Tech Stack & Tools</h2>
+    <div class="skills-grid" role="list" aria-label="Skills and tools grid">
+
+      <div class="skill-card" role="listitem" tabindex="0">
+        <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python logo" />
+        <div class="skill-name">Python</div>
+        <div class="skill-level">Advanced</div>
+        <div class="skill-desc">Readable, flexible, powerful</div>
+      </div>
+
+      <div class="skill-card" role="listitem" tabindex="0">
+        <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript logo" />
+        <div class="skill-name">JavaScript</div>
+        <div class="skill-level">Advanced</div>
+        <div class="skill-desc">Interactive, frontend, dynamic</div>
+      </div>
+
+      <div class="skill-card" role="listitem" tabindex="0">
+        <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++ logo" />
+        <div class="skill-name">C++</div>
+        <div class="skill-level">Intermediate</div>
+        <div class="skill-desc">Performance-focused, compiled, adaptable</div>
+      </div>
+
+      <div class="skill-card" role="listitem" tabindex="0">
+        <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C# logo" />
+        <div class="skill-name">C#</div>
+        <div class="skill-level">Intermediate</div>
+        <div class="skill-desc">Robust, game-oriented, modern</div>
+      </div>
+
+      <div class="skill-card" role="listitem" tabindex="0">
+        <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java logo" />
+        <div class="skill-name">Java</div>
+        <div class="skill-level">Intermediate</div>
+        <div class="skill-desc">OOP, scalable, multipurpose</div>
+      </div>
+
+      <div class="skill-card" role="listitem" tabindex="0">
+        <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5 logo" />
+        <div class="skill-name">HTML5</div>
+        <div class="skill-level">Advanced</div>
+        <div class="skill-desc">Structure, semantic, responsive</div>
+      </div>
+
+      <div class="skill-card" role="listitem" tabindex="0">
+        <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3 logo" />
+        <div class="skill-name">CSS3</div>
+        <div class="skill-level">Advanced</div>
+        <div class="skill-desc">Styling, responsive, dynamic</div>
+      </div>
+
+      <div class="skill-card" role="listitem" tabindex="0">
+        <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP logo" />
+        <div class="skill-name">PHP</div>
+        <div class="skill-level">Beginner</div>
+        <div class="skill-desc">Dynamic, backend, scripting</div>
+      </div>
+
+      <div class="skill-card" role="listitem" tabindex="0">
+        <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL logo" />
+        <div class="skill-name">SQL</div>
+        <div class="skill-level">Beginner</div>
+        <div class="skill-desc">Database, query, structured</div>
+      </div>
+
+      <div class="skill-card" role="listitem" tabindex="0">
+        <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/lua/lua-original.svg" alt="Lua logo" />
+        <div class="skill-name">Lua</div>
+        <div class="skill-level">Intermediate</div>
+        <div class="skill-desc">Lightweight, embeddable, gaming</div>
+      </div>
+
+      <div class="skill-card" role="listitem" tabindex="0">
+        <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git logo" />
+        <div class="skill-name">Git</div>
+        <div class="skill-level">Advanced</div>
+        <div class="skill-desc">Version control, collaboration, tracking</div>
+      </div>
+
+      <div class="skill-card" role="listitem" tabindex="0">
+        <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React logo" />
+        <div class="skill-name">React</div>
+        <div class="skill-level">Beginner</div>
+        <div class="skill-desc">Component-based, fast, interactive</div>
+      </div>
+
+      <div class="skill-card" role="listitem" tabindex="0">
+        <img class="skill-logo" src="https://flask.palletsprojects.com/en/2.2.x/_images/flask-logo.png" alt="Flask logo" />
+        <div class="skill-name">Flask</div>
+        <div class="skill-level">Advanced</div>
+        <div class="skill-desc">Lightweight, Python-driven, API-friendly</div>
+      </div>
+
+      <div class="skill-card" role="listitem" tabindex="0">
+        <img class="skill-logo" src="https://pytorch.org/assets/images/pytorch-logo.png" alt="PyTorch logo" />
+        <div class="skill-name">PyTorch</div>
+        <div class="skill-level">Intermediate</div>
+        <div class="skill-desc">Flexible, research-based, neural nets</div>
+      </div>
+
+      <div class="skill-card" role="listitem" tabindex="0">
+        <img class="skill-logo" src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg" alt="TensorFlow logo" />
+        <div class="skill-name">TensorFlow</div>
+        <div class="skill-level">Intermediate</div>
+        <div class="skill-desc">Deep learning, scalable, optimized</div>
+      </div>
+
+      <div class="skill-card" role="listitem" tabindex="0">
+        <img class="skill-logo" src="https://unity.com/sites/default/files/2023-04/unity-icon.png" alt="Unity logo" />
+        <div class="skill-name">Unity</div>
+        <div class="skill-level">Intermediate</div>
+        <div class="skill-desc">Cross-platform, game-focused, real-time</div>
+      </div>
+
+      <div class="skill-card" role="listitem" tabindex="0">
+        <img class="skill-logo" src="https://chat.openai.com/favicon.ico" alt="ChatGPT logo" />
+        <div class="skill-name">ChatGPT</div>
+        <div class="skill-level">—</div>
+        <div class="skill-desc">AI Assistant</div>
+      </div>
+
+    </div>
+  </main>
+</body>
+</html>

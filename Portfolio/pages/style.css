@@ -1,0 +1,210 @@
+/* Base setup */
+body {
+  margin: 0;
+  background-color: black;
+  color: white;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  user-select: none;
+}
+
+.landing {
+  position: relative;
+  text-align: center;
+}
+
+/* === LOGO ZOOM ANIMATION === */
+
+.logo {
+  font-size: 4rem;
+  color: #e50914;
+  letter-spacing: 0.25em;
+  font-weight: 900;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: logoZoomIn 3s ease forwards;
+  margin-bottom: 40px;
+}
+
+@keyframes logoZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+    filter: drop-shadow(0 0 0 #e50914);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+    filter: drop-shadow(0 0 15px #e50914);
+  }
+  70% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 12px #e50914);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+    filter: drop-shadow(0 0 0 #e50914);
+  }
+}
+
+/* === LOADER === */
+
+.loader {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  margin-top: 10px;
+}
+
+/* Show loader when active */
+.loader.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Dots styling */
+.dot {
+  width: 22px;
+  height: 22px;
+  background-color: #e50914;
+  border-radius: 50%;
+  animation: bounce 1.4s infinite ease-in-out both;
+  box-shadow:
+    0 0 6px #e50914,
+    inset 0 0 8px #ff3b3b;
+}
+
+/* Delay bounce animation on each dot */
+.dot:nth-child(1) {
+  animation-delay: -0.56s;
+}
+.dot:nth-child(2) {
+  animation-delay: -0.42s;
+}
+.dot:nth-child(3) {
+  animation-delay: -0.28s;
+}
+.dot:nth-child(4) {
+  animation-delay: -0.14s;
+}
+.dot:nth-child(5) {
+  animation-delay: 0s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0.6);
+    box-shadow:
+      0 0 4px #e50914,
+      inset 0 0 5px #ff3b3b;
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(1.4);
+    box-shadow:
+      0 0 18px #ff1a1a,
+      inset 0 0 20px #ff3b3b;
+    opacity: 1;
+  }
+}
+
+/* === FADE OUT ANIMATION === */
+.fade-out {
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+/* Profile page styles - unchanged */
+.profile-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #141414;
+  color: white;
+}
+
+.logo-top {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-size: 24px;
+  color: #e50914;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 3rem;
+  margin-top: 100px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.profiles {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.profile img {
+  width: 140px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 4px solid transparent;
+}
+
+.profile p {
+  color: #999;
+  font-size: 18px;
+}
+
+.profile:hover {
+  transform: scale(1.05);
+}
+
+.profile:hover img {
+  border-color: white;
+}
+
+.page {
+  padding: 60px 40px;
+}
+/* Profiles page fade-in pop animation */
+
+.profile-screen {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInPop 0.8s forwards ease-out;
+}
+
+@keyframes fadeInPop {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

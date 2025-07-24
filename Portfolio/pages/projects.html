@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects - YuvaanshFlix</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: #121212;
+      color: #eee;
+      font-family: 'Roboto', Arial, sans-serif;
+      user-select: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: #1f1f1f;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.8);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .logo {
+      font-family: 'Bebas Neue', cursive;
+      font-weight: 900;
+      font-size: 2.8rem;
+      color: #e50914;
+      letter-spacing: 0.3em;
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+    }
+    nav {
+      display: flex;
+      gap: 36px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      font-family: 'Roboto', sans-serif;
+    }
+    nav a {
+      color: #aaa;
+      text-decoration: none;
+      padding-bottom: 5px;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s ease;
+      user-select: none;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #fff;
+      border-bottom-color: #e50914;
+    }
+    main {
+      flex-grow: 1;
+      max-width: 1280px;
+      margin: 40px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+    .project-card {
+      background: #222;
+      border-radius: 14px;
+      box-shadow: 0 0 15px #e5091480;
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      user-select: none;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 36px #e50914cc;
+    }
+    .project-image {
+      background: #111;
+      width: 100%;
+      height: 160px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Bebas Neue', cursive;
+      font-size: 6rem;
+      font-weight: 900;
+      color: #e50914;
+      user-select: none;
+    }
+    .project-info {
+      padding: 20px 16px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .project-title {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.8rem;
+      font-weight: 900;
+      margin: 0 0 8px;
+      color: #fff;
+      user-select: text;
+    }
+    .project-desc {
+      font-weight: 400;
+      font-size: 1rem;
+      color: #ccc;
+      line-height: 1.4;
+      user-select: text;
+      min-height: 54px;
+      margin-bottom: 12px;
+    }
+    .project-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .project-links a {
+      background: #e50914;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      user-select: none;
+      transition: background-color 0.3s ease;
+    }
+    .project-links a:hover {
+      background: #b20710;
+    }
+    footer {
+      text-align: center;
+      padding: 20px 12px;
+      background: #1f1f1f;
+      color: #666;
+      font-size: 0.9rem;
+      user-select: none;
+    }
+    @media (max-width: 600px) {
+      main {
+        margin: 30px 16px;
+        grid-template-columns: 1fr;
+      }
+      .project-image {
+        font-size: 5rem;
+        height: 140px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo" onclick="location.href='profiles.html'">YUVAANSHFLIX</div>
+    <nav>
+      <a href="profiles.html">Profiles</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="project-card" tabindex="0" role="listitem" aria-label="Homelab Project">
+      <div class="project-image">H</div>
+      <div class="project-info">
+        <h3 class="project-title">Homelab</h3>
+        <p class="project-desc">A collection of hands-on lab projects for servers, monitoring, and security.</p>
+        <div class="project-links">
+          <a href="https://github.com/YuvaanshKapila/Homelab-Projects" target="_blank" rel="noopener noreferrer">View GitHub</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-card" tabindex="0" role="listitem" aria-label="FishAlert Project">
+      <div class="project-image">F</div>
+      <div class="project-info">
+        <h3 class="project-title">FishAlert</h3>
+        <p class="project-desc">An alert system monitoring fishing activities with real-time notifications.</p>
+        <div class="project-links">
+          <a href="https://github.com/YuvaanshKapila/fishalert1" target="_blank" rel="noopener noreferrer">View GitHub</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-card" tabindex="0" role="listitem" aria-label="NoteTaking Project">
+      <div class="project-image">N</div>
+      <div class="project-info">
+        <h3 class="project-title">NoteTaking</h3>
+        <p class="project-desc">A minimalistic note-taking app focused on speed and simplicity.</p>
+        <div class="project-links">
+          <a href="https://github.com/YuvaanshKapila/NoteTaking" target="_blank" rel="noopener noreferrer">View GitHub</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-card" tabindex="0" role="listitem" aria-label="CaveQuest Project">
+      <div class="project-image">C</div>
+      <div class="project-info">
+        <h3 class="project-title">CaveQuest</h3>
+        <p class="project-desc">A thrilling adventure game with caves to explore and secrets to uncover.</p>
+        <div class="project-links">
+          <a href="https://github.com/YuvaanshKapila/CaveQuest" target="_blank" rel="noopener noreferrer">View GitHub</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-card" tabindex="0" role="listitem" aria-label="YouTube Video Summarizer Project">
+      <div class="project-image">Y</div>
+      <div class="project-info">
+        <h3 class="project-title">YouTube Video Summarizer</h3>
+        <p class="project-desc">An AI-powered tool to summarize YouTube videos into concise text.</p>
+        <div class="project-links">
+          <a href="https://github.com/YuvaanshKapila/YoutubeVideoSummarizer" target="_blank" rel="noopener noreferrer">View GitHub</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    Want more projects? <a href="https://github.com/YuvaanshKapila" target="_blank" rel="noopener noreferrer" style="color:#e50914; text-decoration:none;">Visit my GitHub profile</a>.
+  </footer>
+</body>
+</html>

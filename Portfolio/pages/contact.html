@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - YuvaanshFlix</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: #141414;
+      color: #eee;
+      font-family: 'Roboto', Arial, sans-serif;
+      user-select: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: #1f1f1f;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.8);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .logo {
+      font-family: 'Bebas Neue', cursive;
+      font-weight: 900;
+      font-size: 2.8rem;
+      color: #e50914;
+      letter-spacing: 0.3em;
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+    }
+    nav {
+      display: flex;
+      gap: 36px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      font-family: 'Roboto', sans-serif;
+    }
+    nav a {
+      color: #aaa;
+      text-decoration: none;
+      padding-bottom: 5px;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s ease;
+      user-select: none;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #fff;
+      border-bottom-color: #e50914;
+    }
+    main {
+      flex-grow: 1;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    h1 {
+      font-family: 'Bebas Neue', cursive;
+      font-weight: 900;
+      font-size: 3rem;
+      color: #e50914;
+      margin-bottom: 8px;
+      user-select: none;
+      text-align: center;
+    }
+    p.subtitle {
+      font-size: 1.1rem;
+      color: #ccc;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 24px;
+      user-select: none;
+    }
+    form {
+      background: #222;
+      padding: 24px 32px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #e50914aa;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    label {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 6px;
+      color: #fff;
+      user-select: none;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      font-family: 'Roboto', sans-serif;
+      resize: vertical;
+      background: #111;
+      color: #eee;
+      transition: box-shadow 0.3s ease;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      outline: none;
+      box-shadow: 0 0 8px #e50914;
+      background: #1a1a1a;
+    }
+    textarea {
+      min-height: 120px;
+      line-height: 1.4;
+    }
+    button[type="submit"] {
+      background: #e50914;
+      color: white;
+      font-weight: 900;
+      font-size: 1.2rem;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease;
+    }
+    button[type="submit"]:hover {
+      background: #b20710;
+    }
+    .success-message,
+    .error-message {
+      font-weight: 700;
+      text-align: center;
+      font-size: 1.1rem;
+      padding: 12px 16px;
+      border-radius: 8px;
+      display: none;
+      user-select: none;
+    }
+    .success-message {
+      background: #27ae60;
+      color: #d4f4dd;
+    }
+    .error-message {
+      background: #c0392b;
+      color: #f9d6d5;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo" onclick="location.href='profiles.html'">YUVAANSHFLIX</div>
+    <nav>
+      <a href="profiles.html">Profiles</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Contact Me</h1>
+    <p class="subtitle">Have a question or want to collaborate? Fill out the form below!</p>
+
+    <form id="contactForm" action="https://formspree.io/f/xnnzdnvk" method="POST" novalidate>
+      <label for="name">Name *</label>
+      <input type="text" id="name" name="name" required placeholder="Your full name" autocomplete="name" />
+
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" required placeholder="your.email@example.com" autocomplete="email" />
+
+      <label for="subject">Subject *</label>
+      <input type="text" id="subject" name="subject" required placeholder="Subject of your message" />
+
+      <label for="message">Message *</label>
+      <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
+
+      <button type="submit">Send Message</button>
+
+      <div class="success-message" id="successMessage" role="alert">Thanks for reaching out! I'll get back to you soon.</div>
+      <div class="error-message" id="errorMessage" role="alert">Oops! Something went wrong. Please try again.</div>
+    </form>
+  </main>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+    const errorMessage = document.getElementById('errorMessage');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      successMessage.style.display = 'none';
+      errorMessage.style.display = 'none';
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          headers: {
+            'Accept': 'application/json'
+          },
+          body: formData
+        });
+
+        if (response.ok) {
+          form.reset();
+          successMessage.style.display = 'block';
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      } catch (error) {
+        errorMessage.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

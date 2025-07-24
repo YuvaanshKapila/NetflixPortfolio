@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Me - YuvaanshFlix</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* All your original CSS remains intact — additions are at bottom */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: #141414;
+      color: #fff;
+      font-family: 'Roboto', Arial, sans-serif;
+      overflow-x: hidden;
+      user-select: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: #141414;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+      border-bottom: 1px solid #222;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    }
+    .logo {
+      font-family: 'Bebas Neue', cursive;
+      font-weight: 900;
+      font-size: 2.8rem;
+      color: #e50914;
+      letter-spacing: 0.3em;
+      cursor: pointer;
+      user-select: none;
+      margin-right: 48px;
+      white-space: nowrap;
+      line-height: 1;
+    }
+    nav {
+      display: flex;
+      gap: 32px;
+      flex-grow: 1;
+      font-weight: 600;
+      font-size: 1.1rem;
+      font-family: 'Roboto', sans-serif;
+    }
+    nav a {
+      color: #b3b3b3;
+      text-decoration: none;
+      padding-bottom: 8px;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.3s ease, color 0.3s ease;
+      user-select: none;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #fff;
+      border-bottom-color: #e50914;
+    }
+    .profile-area {
+      width: 42px;
+      height: 42px;
+      border-radius: 6px;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png') no-repeat center / cover;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border-color 0.3s ease;
+      flex-shrink: 0;
+    }
+    .profile-area:hover {
+      border-color: #e50914;
+    }
+    main {
+      max-width: 1280px;
+      margin: 32px 40px 80px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 56px;
+    }
+    .hero {
+      position: relative;
+      width: 100vw;
+      height: 820px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 0 32px #e50914aa;
+    }
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      user-select: none;
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 30%;
+      left: 5%;
+      color: white;
+      z-index: 2;
+      max-width: 500px;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      font-family: 'Bebas Neue', cursive;
+      margin: 0 0 10px;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .play-button {
+      display: inline-block;
+      background-color: white;
+      color: black;
+      padding: 12px 24px;
+      font-size: 1.1rem;
+      border-radius: 4px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .play-button:hover {
+      background-color: #e50914;
+      color: white;
+    }
+
+    h2.section-title {
+      font-family: 'Bebas Neue', cursive;
+      font-weight: 900;
+      font-size: 3.6rem;
+      color: #e50914;
+      margin-bottom: 16px;
+      user-select: none;
+    }
+
+    .carousel {
+      display: flex;
+      gap: 28px;
+      overflow-x: auto;
+      scroll-padding-left: 40px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 12px;
+      scrollbar-width: thin;
+      scrollbar-color: #e50914 #222;
+    }
+
+    .carousel::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .carousel::-webkit-scrollbar-track {
+      background: #222;
+      border-radius: 8px;
+    }
+
+    .carousel::-webkit-scrollbar-thumb {
+      background: #e50914;
+      border-radius: 8px;
+    }
+
+    .card {
+      flex: 0 0 320px;
+      background: #222;
+      border-radius: 10px;
+      box-shadow: 0 0 18px #e50914aa;
+      scroll-snap-align: start;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+      display: flex;
+      flex-direction: column;
+      user-select: none;
+      padding: 28px 24px;
+      color: #ccc;
+      font-weight: 400;
+      font-size: 1.45rem;
+      font-family: 'Bebas Neue', cursive;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 28px #e50914dd;
+    }
+
+    .cert-card {
+      flex: 0 0 240px;
+      background: #222;
+      border-radius: 10px;
+      box-shadow: 0 0 18px #e50914aa;
+      scroll-snap-align: start;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      user-select: none;
+      color: #ccc;
+    }
+
+    .cert-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 28px #e50914dd;
+    }
+
+    .cert-card img {
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+      margin-bottom: 14px;
+      filter: drop-shadow(0 0 4px #e50914);
+      border-radius: 6px;
+      background: #111;
+      padding: 6px;
+    }
+
+    .cert-card a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      text-align: center;
+    }
+
+    .cert-card a:hover {
+      color: #e50914;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 800px) {
+      main {
+        margin: 20px 24px 64px 24px;
+      }
+      .card {
+        flex: 0 0 260px;
+      }
+      .cert-card {
+        flex: 0 0 200px;
+      }
+      h2.section-title {
+        font-size: 2.6rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      main {
+        margin: 16px 16px 48px 16px;
+      }
+      .card {
+        flex: 0 0 220px;
+      }
+      .cert-card {
+        flex: 0 0 160px;
+      }
+      h2.section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo" onclick="location.href='profiles.html'">YUVAANSHFLIX</div>
+    <nav>
+      <a href="profiles.html">Profiles</a>
+      <a href="about.html" class="active">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="profile-area" title="Profile"></div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <img src="https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif" alt="Animated hero banner" />
+      <div class="hero-text">
+        <h1>Yuvaansh Kapila</h1>
+        <p>I'm a Grade 10 iSTEM student at Thomas A. Blakelock High School with a strong passion for computer science, finance, and leadership. I have experience in both frontend and backend development, along with strong communication skills gained through various tech and leadership roles. I'm driven by curiosity, creativity, and a desire to keep growing in both technical and strategic fields.</p>
+        <a href="https://www.linkedin.com/in/yuvaansh-kapila-3b4bab364/" target="_blank" class="play-button">▶ Play</a>
+      </div>
+    </div>
+
+    <h2 class="section-title">Top Picks For About Me</h2>
+    <div class="carousel">
+      <div class="card">6 years experience</div>
+      <div class="card">2× Hackathon Winner</div>
+      <div class="card">Driven by passion for problem-solving and innovation.</div>
+      <div class="card">Computer Science student eager to craft seamless digital products.</div>
+      <div class="card">20+ completed projects focused on innovation and impact.</div>
+    </div>
+
+    <h2 class="section-title">Certifications</h2>
+    <div class="carousel">
+      <div class="cert-card">
+        <img src="https://cdn.worldvectorlogo.com/logos/oracle-6.svg" alt="Oracle Generative AI" />
+        <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=6EF7F114F727FE18F7AB6FB23D21B669D0676737BF617828C9803DC44AF46C7E" target="_blank">Oracle Generative AI Professional</a>
+      </div>
+      <div class="cert-card">
+        <img src="https://cdn.worldvectorlogo.com/logos/aws-2.svg" alt="AWS Cloud Practitioner" />
+        <a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/036733927a5748049c3536517dce6aee" target="_blank">AWS Cloud Practitioner</a>
+      </div>
+      <div class="cert-card" style="opacity: 0.5; cursor: default;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Oracle_Cloud_Infrastructure_logo.svg" alt="OCI Cloud Architect" />
+        <span>OCI Cloud Architect (coming soon)</span>
+      </div>
+      <div class="cert-card">
+        <img src="https://cdn.worldvectorlogo.com/logos/harvard-university.svg" alt="Harvard CS50x" />
+        <a href="https://certificates.cs50.io/d510765f-cf15-4f05-a10e-6b12f33162a7.pdf?size=letter" target="_blank">Harvard CS50x</a>
+      </div>
+      <div class="cert-card">
+        <img src="https://cdn.worldvectorlogo.com/logos/google-cloud-1.svg" alt="Google Data Science" />
+        <a href="https://www.coursera.org/account/accomplishments/verify/RHLLT42ZWD5M" target="_blank">Google Data Science</a>
+      </div>
+      <div class="cert-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Finance_icon.svg" alt="Fundamentals of Finance" />
+        <a href="https://www.coursera.org/account/accomplishments/specialization/9MDH9WGD3NFP" target="_blank">Fundamentals of Finance</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
